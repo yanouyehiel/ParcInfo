@@ -5,9 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ParcInfo"
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid MouseDown="Border_MouseDown">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.9,0" EndPoint="0.1,1">
+                <GradientStop Color="#ED7F10" Offset="1"  />
+                <GradientStop Color="#f2f2f2" Offset="0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border Height="390" VerticalAlignment="Top" CornerRadius="0 0 180 0" Background="#333" MouseDown="Border_MouseDown"></Border>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Width="350">
+                <Image Source="/images/image.png" Width="300" Height="200" VerticalAlignment="Top" Margin="30" />
+                <TextBlock Text="Bienvenu sur l'interface de gestion GESPARC" Foreground="White" FontSize="15" 
+                           HorizontalAlignment="Center"
+                           FontFamily="Comic Sans MS"/>
+            </StackPanel>
+            <StackPanel Width="350">
+                <StackPanel Margin="20 40">
+                    <TextBlock Text="User Login" Foreground="White" Margin="20" TextAlignment="Center" FontSize="30"
+                               FontFamily="Comic Sans MS"/>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <materialDesign:PackIcon Kind="user" Height="30" Width="30" Foreground="White" />
+                        <TextBox x:Name="txtUsername" Margin="10 0" materialDesign:HintAssist.Hint="Entrer votre matricule" Foreground="White"
+                                   Width="250" BorderBrush="#ED7F10" FontSize="15" CaretBrush="White" SelectionBrush="#ddd" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <materialDesign:PackIcon Kind="Lock" Height="30" Width="30" Foreground="White" />
+                        <PasswordBox x:Name="txtPassword" Margin="10 0" materialDesign:HintAssist.Hint="*******" Foreground="White"
+               Width="250" BorderBrush="#ED7F10" FontSize="15" CaretBrush="White" SelectionBrush="#ddd" />
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center" Margin="10">
+                        <Button Width="150" Height="45" 
+                                materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="2" Background="#ED7F10"
+                                BorderBrush="White" Foreground="White" Click="btnLogin_Click"
+                                Content="Login" ToolTip="White" Cursor="Hand"> 
+                            
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Width="100">
+                <Button Margin="10 10 0 0" Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}"
+                        ToolTip="Close" x:Name="btnExit" Click="btnExit_Click" BorderBrush="#ED7F10" Width="50" Height="50">
+                    <materialDesign:PackIcon Kind="Close" Width="30" Height="30" Foreground="White" />
+                </Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

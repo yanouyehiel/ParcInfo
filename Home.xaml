@@ -1,0 +1,30 @@
+﻿<Window x:Class="ParcInfo.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:local="clr-namespace:ParcInfo"
+        mc:Ignorable="d"
+        Title="Home" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Path x:Name="iconApp" Fill="#ED7F10" Margin="0 10 0 0" VerticalAlignment="Top" Stretch="Uniform" Width="25" Height="25" Data="M10,0 L90,0 100,10 100,70 85,85 15,85 0,70 0,10 10,0 Z
+            M20,10 L80,10 90,20 90,70 80,80 20,80 10,70 10,20 20,10 Z
+            M30,20 L70,20 75,25 75,65 70,70 30,70 25,65 25,25 30,20 Z" />
+
+        <ListBox x:Name="sidebar" SelectionChanged="sidebar_SelectionChanged" Grid.Column="0" 
+                 Margin="0 50 0 50" BorderThickness="0" SelectionMode="Single">
+            <local:NavButton NavLink="/Pages/Materiel.xaml" Margin="3" Padding="6" Icon="M8 2H1L9.26086 13.0145L1.44995 21.9999H4.09998L10.4883 14.651L16 22H23L14.3917 10.5223L21.8001 2H19.1501L13.1643 8.88578L8 2ZM17 20L5 4H7L19 20H17Z" />
+            <local:NavButton NavLink="/Pages/Association.xaml" Margin="3" Padding="6" Icon="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM12.0606 11.6829L5.64722 6.2377L4.35278 7.7623L12.0731 14.3171L19.6544 7.75616L18.3456 6.24384L12.0606 11.6829Z" />
+            <local:NavButton NavLink="/Pages/Materiel.xaml" Margin="3" Padding="6" Icon="M21 16.42V19.9561C21 20.4811 20.5941 20.9167 20.0705 20.9537C19.6331 20.9846 19.2763 21 19 21C10.1634 21 3 13.8366 3 5C3 4.72371 3.01545 4.36687 3.04635 3.9295C3.08337 3.40588 3.51894 3 4.04386 3H7.5801C7.83678 3 8.05176 3.19442 8.07753 3.4498C8.10067 3.67907 8.12218 3.86314 8.14207 4.00202C8.34435 5.41472 8.75753 6.75936 9.3487 8.00303C9.44359 8.20265 9.38171 8.44159 9.20185 8.57006L7.04355 10.1118C8.35752 13.1811 10.8189 15.6425 13.8882 16.9565L15.4271 14.8019C15.5572 14.6199 15.799 14.5573 16.001 14.6532C17.2446 15.2439 18.5891 15.6566 20.0016 15.8584C20.1396 15.8782 20.3225 15.8995 20.5502 15.9225C20.8056 15.9483 21 16.1633 21 16.42Z" />
+            <local:NavButton NavLink="/Pages/Association.xaml" Margin="3" Padding="6" Icon="M10,0 L90,0 100,10 100,70 85,85 15,85 0,70 0,10 10,0 Z M20,10 L80,10 90,20 90,70 80,80 20,80 10,70 10,20 20,10 Z M30,20 L70,20 75,25 75,65 70,70 30,70 25,65 25,25 30,20 Z" />
+        </ListBox>
+
+        <Frame x:Name="navFrame" NavigationUIVisibility="Hidden" Grid.Column="1" Background="#e9ecef" />
+    </Grid>
+</Window>
