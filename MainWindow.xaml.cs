@@ -36,6 +36,7 @@ namespace ParcInfo
             {
                 MessageBox.Show("Entrer vos identifiants");
             }*/
+            this.Hide();   
             Home2 home = new Home2();
             home.Show();
         }

@@ -1,14 +1,17 @@
 ﻿<Application x:Class="ParcInfo.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:lcl="clr-namespace:ParcInfo.ViewModels"
              xmlns:local="clr-namespace:ParcInfo"
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
              StartupUri="MainWindow.xaml"
              xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:MyNamespace="clr-namespace:ParcInfo">
-    
+
     <Application.Resources>
+        <lcl:ButtonStyleConverter x:Key="ButtonStyleConverter" />
+
         <Style x:Key="menuButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent" />
             <Setter Property="Foreground" Value="#f2f2f2" />
@@ -129,6 +132,42 @@
             <Setter Property="Height" Value="18" />
             <Setter Property="Margin" Value="0 3 0 0" />
             <Setter Property="Foreground" Value="Gray" />
+        </Style>
+
+        <Style x:Key="controlBarButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="#f2f2f2" />
+            <Setter Property="Width" Value="35" />
+            <Setter Property="Height" Value="35" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#ffffff" />
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                                <GradientStop Color="#333" Offset="0" />
+                                <GradientStop Color="#FF9840" Offset="3" />
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="ControlBarButtonIcon" TargetType="fa:IconImage">
+            <Setter Property="Width" Value="9" />
+            <Setter Property="Height" Value="9" />
+            <Setter Property="Foreground" Value="{Binding Path=Tag,RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Button}}}" />
         </Style>
     </Application.Resources>
 </Application>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ParcInfo.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace ParcInfo
         public Home2()
         {
             InitializeComponent();
+            contentControl.Content = new HomeView();
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -32,42 +34,48 @@ namespace ParcInfo
             }
         }
 
-        private void Button_Dashboard_Click(object sender, RoutedEventArgs e)
+        private void pnlControlBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            navFrame.Navigate("/Pages/Dashboard.xaml");
+
         }
 
-        private void Button_Appareils_Click(object sender, RoutedEventArgs e)
+        private void pnlControlBar_MouseEnter(object sender, MouseEventArgs e)
         {
-            navFrame.Navigate("/Pages/Materiel.xaml");
+            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
 
-        private void Button_Associations_Click(object sender, RoutedEventArgs e)
+        private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            navFrame.Navigate("/Pages/Association.xaml");
+            Application.Current.Shutdown();
         }
 
-        private void Button_Personnel_Click(object sender, RoutedEventArgs e)
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
-            navFrame.Navigate("/Pages/Personnel.xaml");
+            this.WindowState = WindowState.Minimized;
         }
 
-        private void sidebar_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btnMaximize_Click(object sender, RoutedEventArgs e)
         {
-            var selected = sidebar.SelectedItem as Button;
-            if (selected == dashboard)
-            {
-                navFrame.Navigate("/Pages/Dashboard.xaml");
-            } else if (selected == association)
-            {
-                navFrame.Navigate("/Pages/Association.xaml");
-            } else if (selected == appareils)
-            {
-                navFrame.Navigate("/Pages/Materiel.xaml");
-            } else if (selected == personnel)
-            {
-                navFrame.Navigate("/Pages/Personnel.xaml");
-            }
+            if (this.WindowState == WindowState.Normal)
+                this.WindowState = WindowState.Maximized;
+            else this.WindowState = WindowState.Normal;
+        }
+
+        private void dashboard_Click(object sender, RoutedEventArgs e)
+        {
+            contentControl.Content = new HomeView();
+        }
+
+        private void appareils_Click(object sender, RoutedEventArgs e)
+        {
+            contentControl.Content = new MaterielView();
+        }
+
+        private void Button_Logout_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            MainWindow m = new MainWindow();
+            m.Show();
         }
     }
 }

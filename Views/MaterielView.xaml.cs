@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ParcInfo.Pages
+namespace ParcInfo.Views
 {
     /// <summary>
-    /// Logique d'interaction pour Personnel.xaml
+    /// Logique d'interaction pour MaterielView.xaml
     /// </summary>
-    public partial class Personnel : Page
+    public partial class MaterielView : UserControl
     {
-        public Personnel()
+        public MaterielView()
         {
             InitializeComponent();
         }

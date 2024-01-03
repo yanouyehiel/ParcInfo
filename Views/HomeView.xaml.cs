@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ParcInfo.Pages
+namespace ParcInfo.Views
 {
     /// <summary>
-    /// Logique d'interaction pour Association.xaml
+    /// Logique d'interaction pour HomeView.xaml
     /// </summary>
-    public partial class Association : Page
+    public partial class HomeView : UserControl
     {
-        public Association()
+        public HomeView()
         {
             InitializeComponent();
         }
