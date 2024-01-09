@@ -1,0 +1,62 @@
+﻿<Window x:Class="ParcInfo.Views.ModalAjouterMateriel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParcInfo.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Ajouter un materiel" Height="600" Width="450" Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Entrer les informations du materiel" Style="{StaticResource titleAddMateriel}" />
+
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Nom" Style="{StaticResource labelInput}"/>
+                <TextBox x:Name="nom" materialDesign:HintAssist.Hint="Entrer le nom" Style="{StaticResource input}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Marque" Style="{StaticResource labelInput}"/>
+                <TextBox x:Name="marque" materialDesign:HintAssist.Hint="Entrer la marque" Style="{StaticResource input}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Fabriquant" Style="{StaticResource labelInput}"/>
+                <TextBox x:Name="fabriquant" materialDesign:HintAssist.Hint="Entrer le fabriquant" Style="{StaticResource input}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Fournisseur" Style="{StaticResource labelInput}"/>
+                <TextBox x:Name="fournisseur" materialDesign:HintAssist.Hint="Entrer le fournisseur" Style="{StaticResource input}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Date de mise en service" Style="{StaticResource labelInput}"/>
+                <DatePicker x:Name="date_Service" Style="{StaticResource datePicker}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Date de mise en service" Style="{StaticResource labelInput}"/>
+                <DatePicker x:Name="date_fin" Style="{StaticResource datePicker}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Status" Style="{StaticResource labelInput}"/>
+                <ComboBox x:Name="status" Style="{StaticResource combobox}">
+                    <ComboBoxItem Content="En service"/>
+                    <ComboBoxItem Content="Hors service"/>
+                    <ComboBoxItem Content="En maintenancce"/>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="0 30">
+            <Button x:Name="addMateriel" Style="{StaticResource btnAdd}"
+                materialDesign:ButtonAssist.CornerRadius="20"
+                Click="addMateriel_Click" Content="Ajouter">
+
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

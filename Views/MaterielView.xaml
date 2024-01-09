@@ -5,9 +5,54 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ParcInfo.Views"
              xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:vm="clr-namespace:ParcInfo.ViewModels"
             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
             mc:Ignorable="d" Height="650" Width="1030">
+    <UserControl.DataContext>
+        <vm:MaterielViewModel />
+    </UserControl.DataContext>
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Section du haut -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0" Grid.Column="1">
+                <Button Click="Button_Click" Content="Ajouter un appareil" Style="{StaticResource topMenuButton}" />
+            </StackPanel>
+
+            <!-- Titre -->
+            <TextBlock Text="Listing de tous les appreils" FontSize="26" Foreground="#f2f2f2" HorizontalAlignment="Left" Margin="46,28,0,28" />
+        </Grid>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,20" Grid.Column="1">
+
+            <Button Content="Par type" Style="{StaticResource topButton}"/>
+            <Button Content="Par nom" Style="{StaticResource topButton}" Background="#FF9840"/>
+            <Button Content="Par status" Style="{StaticResource topButton}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="2">
+            <DataGrid CellStyle="{DynamicResource DataGridCellStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
+                  x:Name="dataGrid" IsReadOnly="True" AutoGenerateColumns="False" Margin="50 0 50 50">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nom" MinWidth="150" Width="*" Binding="{Binding Noms}"/>
+                    <DataGridTextColumn Header="Marque" MinWidth="80" Width="*" Binding="{Binding Matricule}"/>
+                    <DataGridTextColumn Header="Fournisseur" MinWidth="120" Width="*" Binding="{Binding Telephone}"/>
+                    <DataGridTextColumn Header="Fabriquant" MinWidth="150" Width="*" Binding="{Binding Email}"/>
+                    <DataGridTextColumn Header="Date mise en service" MinWidth="150" Width="*" Binding="{Binding Poste}"/>
+                    <DataGridTextColumn Header="Date fin de service" MinWidth="150" Width="*" Binding="{Binding Equipement}"/>
+                    <DataGridTextColumn Header="Status" MinWidth="150" Width="*" Binding="{Binding DateEmbauche}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
     </Grid>
 </UserControl>

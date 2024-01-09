@@ -18,13 +18,13 @@ namespace ParcInfo
 
         public void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            /*if (!txtUsername.Text.Equals("") && !txtPassword.Password.Equals(""))
+            if (!txtUsername.Text.Equals("") && !txtPassword.Password.Equals(""))
             {
                 isConnected = ConnectUser(txtUsername.Text, txtPassword.Password);
                 if (isConnected)
                 {
                     this.Hide();
-                    Home h = new Home();
+                    Home2 h = new Home2();
                     h.Show();
                 }
                 else
@@ -35,10 +35,7 @@ namespace ParcInfo
             else
             {
                 MessageBox.Show("Entrer vos identifiants");
-            }*/
-            this.Hide();   
-            Home2 home = new Home2();
-            home.Show();
+            }
         }
 
         public void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -68,7 +65,7 @@ namespace ParcInfo
                         command.Parameters.AddWithValue("@password", password);
 
                         int result = Convert.ToInt32(command.ExecuteScalar());
-                        if (result > 0)
+                        if (result == 1)
                         {
                             isConnected = true;
                         }

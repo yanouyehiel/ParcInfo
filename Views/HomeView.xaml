@@ -24,10 +24,9 @@
 
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="148,0,0,0" Grid.Column="1">
 
-                <Button Content="Aujourd'hui" Style="{StaticResource topMenuButton}" />
-                <Button Content="Semaine" Style="{StaticResource topMenuButton}" Background="#FF9840" Foreground="#f2f2f2" />
-                <Button Content="Mois" Style="{StaticResource topMenuButton}" />
-                <Button Content="Année" Style="{StaticResource topMenuButton}" />
+                <Button Content="Aujourd'hui" Style="{StaticResource topButton}" />
+                <Button Content="Semaine" Style="{StaticResource topButton}" Background="#FF9840" Foreground="#f2f2f2" />
+                <Button Content="Mois" Style="{StaticResource topButton}" />
             </StackPanel>
 
             <!-- Titre -->
@@ -43,12 +42,12 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <uc:InfoCard Grid.Column="0" Title="Total Views" Number="654" Icon="Eye" Background1="#FF9840" Background2="Gray"
- EllipseBackground1="AliceBlue" EllipseBackground2="Azure" Background="#333" />
-            <uc:InfoCard Grid.Column="1" Title="Total Materiel" Number="654" Icon="File" Background1="#FF9840" Background2="Gray"
-EllipseBackground1="AliceBlue" EllipseBackground2="Azure" Background="#333" />
-            <uc:InfoCard Grid.Column="2" Title="Total Views" Number="654" Icon="ObjectGroup" Background1="#FF9840" Background2="Gray"
-EllipseBackground1="AliceBlue" EllipseBackground2="Azure" Background="#333" />
+            <uc:InfoCard x:Name="blocEmploye" Grid.Column="0" Title="Total Employés" Number="" Icon="Person" Background1="#FF9840" Background2="Gray"
+ EllipseBackground1="AliceBlue" EllipseBackground2="Azure" Background="Transparent" />
+            <uc:InfoCard x:Name="blocMateriel" Grid.Column="1" Title="Total Materiels" Number="" Icon="Server" Background1="#FF9840" Background2="Gray"
+EllipseBackground1="AliceBlue" EllipseBackground2="Azure" Background="Transparent" />
+            <uc:InfoCard x:Name="blocAssos" Grid.Column="2" Title="Total Associations" Number="0" Icon="Link" Background1="#FF9840" Background2="Gray"
+EllipseBackground1="AliceBlue" EllipseBackground2="Azure" Background="Transparent" />
         </Grid>
 
         <Grid Grid.Row="2">
@@ -144,16 +143,16 @@ EllipseBackground1="AliceBlue" EllipseBackground2="Azure" Background="#333" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
 
-                    <StackPanel Orientation="Horizontal" Margin="20 0 0 15">
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 15">
                         <fa:IconImage Icon="Circle" Style="{StaticResource titleIcon}"/>
-                        <TextBlock Text="Récents Mouvements" Style="{StaticResource titleText}"/>
+                        <TextBlock Text="Récents Enregistrements" Style="{StaticResource titleText}"/>
                     </StackPanel>
 
                     <!-- Mouvements -->
                     <StackPanel Grid.Row="1">
-                        <uc:Mouvement Title="Laptop Thinkpad" Desc="Lundi 01 Janvier 2024" Icon="Link" />
-                        <uc:Mouvement Title="Laptop Thinkpad" Desc="Lundi 01 Janvier 2024" Icon="Desktop" />
-                        <uc:Mouvement Title="Laptop Thinkpad" Desc="Lundi 01 Janvier 2024" Icon="Baby" />
+                        <uc:Mouvement Title="Laptop Thinkpad" Desc="Lundi 01 Janvier 2024" Icon="Server" />
+                        <uc:Mouvement Title="Laptop Thinkpad" Desc="Lundi 01 Janvier 2024" Icon="Server" />
+                        <uc:Mouvement Title="Laptop Thinkpad" Desc="Lundi 01 Janvier 2024" Icon="Server" />
                     </StackPanel>
                 </Grid>
             </Border>

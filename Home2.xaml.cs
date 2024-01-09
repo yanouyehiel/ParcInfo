@@ -1,4 +1,5 @@
-﻿using ParcInfo.Views;
+﻿using MySql.Data.MySqlClient;
+using ParcInfo.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,9 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ParcInfo
 {
-    /// <summary>
-    /// Logique d'interaction pour Home2.xaml
-    /// </summary>
     public partial class Home2 : Window
     {
         public Home2()
@@ -77,5 +72,16 @@ namespace ParcInfo
             MainWindow m = new MainWindow();
             m.Show();
         }
+
+        private void association_Click(object sender, RoutedEventArgs e)
+        {
+            contentControl.Content = new AssociationView();
+        }
+
+        private void personnel_Click(object sender, RoutedEventArgs e)
+        {
+            contentControl.Content = new PersonnelView();
+        }
+
     }
 }

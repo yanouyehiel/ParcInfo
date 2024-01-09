@@ -8,5 +8,9 @@ namespace ParcInfo.ViewModels
 {
     public class MaterielViewModel : ViewModelBase
     {
+        public MaterielViewModel() { }
+
+        public string Nom { get; set; }
+        public string DateMiseService { get; set; }
     }
 }

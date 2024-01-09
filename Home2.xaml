@@ -61,16 +61,16 @@
                         <TextBlock Text="Appareils" Style="{StaticResource menuButtonText}" />
                     </StackPanel>
                 </Button>
-                <Button x:Name="association" Style="{StaticResource menuButton}" Cursor="Hand">
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Link" Style="{StaticResource menuButtonIcon}" />
-                        <TextBlock Text="Associations" Style="{StaticResource menuButtonText}" />
-                    </StackPanel>
-                </Button>
-                <Button x:Name="personnel" Style="{StaticResource menuButton}" Cursor="Hand">
+                <Button x:Name="personnel" Style="{StaticResource menuButton}" Cursor="Hand" Click="personnel_Click">
                     <StackPanel Orientation="Horizontal">
                         <fa:IconImage Icon="Person" Style="{StaticResource menuButtonIcon}" />
                         <TextBlock Text="Personnel" Style="{StaticResource menuButtonText}" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="association" Style="{StaticResource menuButton}" Cursor="Hand" Click="association_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="Link" Style="{StaticResource menuButtonIcon}" />
+                        <TextBlock Text="Associations" Style="{StaticResource menuButtonText}" />
                     </StackPanel>
                 </Button>
                 <Button Style="{StaticResource menuButton}" Cursor="Hand">

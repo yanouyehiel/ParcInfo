@@ -17,30 +17,23 @@ using System.Windows.Shapes;
 
 namespace ParcInfo.Views
 {
-    
-    public partial class MaterielView : UserControl
+    public partial class PersonnelView : UserControl
     {
         string connectionString = "Server=localhost;Database=parc_info_desktop;User ID=root;Password=;";
-        public MaterielView()
+        public PersonnelView()
         {
             InitializeComponent();
-            loadMateriel();
+            loadEmployes();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ModalAjouterMateriel m = new ModalAjouterMateriel();
-            m.Show();
-        }
-
-        private void loadMateriel()
+        private void loadEmployes()
         {
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
-                    string query = "SELECT * FROM equipements";
+                    string query = "SELECT * FROM users";
                     MySqlCommand cmd = new MySqlCommand(query, connection);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
