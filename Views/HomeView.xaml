@@ -46,7 +46,7 @@
  EllipseBackground1="AliceBlue" EllipseBackground2="Azure" Background="Transparent" />
             <uc:InfoCard x:Name="blocMateriel" Grid.Column="1" Title="Total Materiels" Number="" Icon="Server" Background1="#FF9840" Background2="Gray"
 EllipseBackground1="AliceBlue" EllipseBackground2="Azure" Background="Transparent" />
-            <uc:InfoCard x:Name="blocAssos" Grid.Column="2" Title="Total Associations" Number="0" Icon="Link" Background1="#FF9840" Background2="Gray"
+            <uc:InfoCard x:Name="blocAssos" Grid.Column="2" Title="Total Associations" Number="" Icon="Link" Background1="#FF9840" Background2="Gray"
 EllipseBackground1="AliceBlue" EllipseBackground2="Azure" Background="Transparent" />
         </Grid>
 
@@ -66,7 +66,7 @@ EllipseBackground1="AliceBlue" EllipseBackground2="Azure" Background="Transparen
 
                     <StackPanel Orientation="Horizontal" Margin="0 0 0 25">
                         <fa:IconImage Icon="Circle" Style="{StaticResource titleIcon}" />
-                        <TextBlock Text="Profit" Style="{StaticResource titleText}" />
+                        <TextBlock Text="Statistique de connexion" Style="{StaticResource titleText}" />
                     </StackPanel>
 
                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Row="1">
@@ -151,8 +151,8 @@ EllipseBackground1="AliceBlue" EllipseBackground2="Azure" Background="Transparen
                     <!-- Mouvements -->
                     <StackPanel Grid.Row="1">
                         <uc:Mouvement Title="Laptop Thinkpad" Desc="Lundi 01 Janvier 2024" Icon="Server" />
-                        <uc:Mouvement Title="Laptop Thinkpad" Desc="Lundi 01 Janvier 2024" Icon="Server" />
-                        <uc:Mouvement Title="Laptop Thinkpad" Desc="Lundi 01 Janvier 2024" Icon="Server" />
+                        <uc:Mouvement Title="Ecran Plasma" Desc="Vendredi 05 Janvier 2024" Icon="Screenpal" />
+                        <uc:Mouvement Title="Souris" Desc="Dimanche 07 Janvier 2024" Icon="Mouse" />
                     </StackPanel>
                 </Grid>
             </Border>

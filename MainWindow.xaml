@@ -54,7 +54,7 @@
                         <Button Width="150" Height="45" 
                                 materialDesign:ButtonAssist.CornerRadius="10" BorderThickness="2" Background="#ED7F10"
                                 BorderBrush="Transparent" Foreground="White" Click="btnLogin_Click"
-                                Content="Login" Cursor="Hand"> 
+                                Content="Login" Cursor="Hand" ToolTip="Login"> 
                             
                         </Button>
                     </StackPanel>

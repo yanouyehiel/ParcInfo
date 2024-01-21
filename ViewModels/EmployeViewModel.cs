@@ -13,7 +13,7 @@ namespace ParcInfo.ViewModels
         private string connectionString = "Server=localhost;Database=parc_info_desktop;User ID=root;Password=;";
         public EmployeViewModel() 
         {
-            using (MySqlConnection connection = new MySqlConnection(this.connectionString))
+            /*using (MySqlConnection connection = new MySqlConnection(this.connectionString))
             {
                 try
                 {
@@ -46,7 +46,7 @@ namespace ParcInfo.ViewModels
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
+            }*/
         }
     }
 }

@@ -42,16 +42,8 @@
 
         <Grid Grid.Row="2">
             <DataGrid CellStyle="{DynamicResource DataGridCellStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
-                  x:Name="dataGrid" IsReadOnly="True" AutoGenerateColumns="False" Margin="50 0 50 50">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Nom" MinWidth="150" Width="*" Binding="{Binding Noms}"/>
-                    <DataGridTextColumn Header="Marque" MinWidth="80" Width="*" Binding="{Binding Matricule}"/>
-                    <DataGridTextColumn Header="Fournisseur" MinWidth="120" Width="*" Binding="{Binding Telephone}"/>
-                    <DataGridTextColumn Header="Fabriquant" MinWidth="150" Width="*" Binding="{Binding Email}"/>
-                    <DataGridTextColumn Header="Date mise en service" MinWidth="150" Width="*" Binding="{Binding Poste}"/>
-                    <DataGridTextColumn Header="Date fin de service" MinWidth="150" Width="*" Binding="{Binding Equipement}"/>
-                    <DataGridTextColumn Header="Status" MinWidth="150" Width="*" Binding="{Binding DateEmbauche}"/>
-                </DataGrid.Columns>
+                  x:Name="dataGrid" IsReadOnly="True" AutoGenerateColumns="False" Margin="50 0 50 50" Loaded="dataGrid_Loaded">
+                
             </DataGrid>
         </Grid>
     </Grid>

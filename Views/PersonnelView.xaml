@@ -12,6 +12,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -22,29 +23,25 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="148,0,0,0" Grid.Column="1">
-
-                <Button Content="Par poste" Style="{StaticResource topButton}" />
-                <Button Content="Par nom" Style="{StaticResource topButton}" Background="#FF9840" />
-                <Button Content="Par date" Style="{StaticResource topButton}" />
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0" Grid.Column="1">
+                <Button x:Name="addPersonnel" Click="addPersonnel_Click" Content="Créer un compte" Style="{StaticResource topMenuButton}" />
             </StackPanel>
 
             <!-- Titre -->
             <TextBlock Text="Listing de tous les employés" FontSize="26" Foreground="#f2f2f2" HorizontalAlignment="Left" Margin="46,28,0,28" />
         </Grid>
 
-        <Grid Grid.Row="1">
-            <DataGrid RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
-                      x:Name="dataGrid" IsReadOnly="True" AutoGenerateColumns="False" Margin="50 0 50 50">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Noms" MinWidth="150" Width="*" Binding="{Binding Noms}"/>
-                    <DataGridTextColumn Header="Matricule" MinWidth="80" Width="*" Binding="{Binding Matricule}"/>
-                    <DataGridTextColumn Header="Téléphone" MinWidth="120" Width="*" Binding="{Binding Telephone}"/>
-                    <DataGridTextColumn Header="Email" MinWidth="150" Width="*" Binding="{Binding Email}"/>
-                    <DataGridTextColumn Header="Poste" MinWidth="150" Width="*" Binding="{Binding Poste}"/>
-                    <DataGridTextColumn Header="Equipement" MinWidth="150" Width="*" Binding="{Binding Equipement}"/>
-                    <DataGridTextColumn Header="Date d'embauche" MinWidth="150" Width="*" Binding="{Binding DateEmbauche}"/>
-                </DataGrid.Columns>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,20" Grid.Column="1">
+
+            <Button Content="Par type" Style="{StaticResource topButton}"/>
+            <Button Content="Par nom" Style="{StaticResource topButton}" Background="#FF9840"/>
+            <Button Content="Par status" Style="{StaticResource topButton}"/>
+        </StackPanel>
+        
+        <Grid Grid.Row="2">
+            <DataGrid CellStyle="{DynamicResource DataGridCellStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
+                      x:Name="dataGrid" IsReadOnly="True" AutoGenerateColumns="False" Margin="50 0 50 50" Loaded="dataGrid_Loaded">
+                
             </DataGrid>
         </Grid>
     </Grid>

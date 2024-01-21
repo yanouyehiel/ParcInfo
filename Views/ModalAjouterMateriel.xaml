@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ParcInfo.Views"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="Ajouter un materiel" Height="600" Width="450" Background="Transparent">
+        Title="Ajouter un materiel" Height="620" Width="520" Background="Transparent">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -17,6 +17,10 @@
         <TextBlock Grid.Row="0" Text="Entrer les informations du materiel" Style="{StaticResource titleAddMateriel}" />
 
         <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Type matériel" Style="{StaticResource labelInput}"/>
+                <ComboBox x:Name="types_materiel" Style="{StaticResource combobox}" />
+            </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="40 15">
                 <TextBlock Text="Nom" Style="{StaticResource labelInput}"/>
                 <TextBox x:Name="nom" materialDesign:HintAssist.Hint="Entrer le nom" Style="{StaticResource input}"/>
@@ -34,11 +38,11 @@
                 <TextBox x:Name="fournisseur" materialDesign:HintAssist.Hint="Entrer le fournisseur" Style="{StaticResource input}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="40 15">
-                <TextBlock Text="Date de mise en service" Style="{StaticResource labelInput}"/>
+                <TextBlock Text="Date mise en service" Style="{StaticResource labelInput}"/>
                 <DatePicker x:Name="date_Service" Style="{StaticResource datePicker}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="40 15">
-                <TextBlock Text="Date de mise en service" Style="{StaticResource labelInput}"/>
+                <TextBlock Text="Date mise hors service" Style="{StaticResource labelInput}"/>
                 <DatePicker x:Name="date_fin" Style="{StaticResource datePicker}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="40 15">

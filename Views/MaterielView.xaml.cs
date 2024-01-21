@@ -46,6 +46,16 @@ namespace ParcInfo.Views
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
+                    dataGrid.AutoGenerateColumns = false;
+
+                    foreach (DataColumn column in dt.Columns)
+                    {
+                        DataGridTextColumn gridColumn = new DataGridTextColumn();
+                        gridColumn.Header = column.ColumnName;
+                        gridColumn.Binding = new Binding(column.ColumnName);
+                        dataGrid.Columns.Add(gridColumn);
+                    }
+
                     dataGrid.ItemsSource = dt.DefaultView;
                 }
                 catch (MySqlException ex)
@@ -57,6 +67,11 @@ namespace ParcInfo.Views
                     connection.Close();
                 }
             }
+        }
+
+        private void dataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            loadMateriel();
         }
     }
 }

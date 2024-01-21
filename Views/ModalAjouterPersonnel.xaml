@@ -1,0 +1,63 @@
+﻿<Window x:Class="ParcInfo.Views.ModalAjouterPersonnel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParcInfo.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Ajouter un personnel" Height="560" Width="520" Background="Transparent">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Entrer les informations de l'employé" Style="{StaticResource titleAddMateriel}" />
+
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Noms" Style="{StaticResource labelInput}"/>
+                <TextBox x:Name="nom" materialDesign:HintAssist.Hint="Entrer le nom" Style="{StaticResource input}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Mot de passe" Style="{StaticResource labelInput}"/>
+                <TextBox x:Name="password" materialDesign:HintAssist.Hint="Entrer la marque" Style="{StaticResource input}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Téléphone" Style="{StaticResource labelInput}"/>
+                <TextBox x:Name="tel" materialDesign:HintAssist.Hint="Entrer le fabriquant" Style="{StaticResource input}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Email" Style="{StaticResource labelInput}"/>
+                <TextBox x:Name="email" materialDesign:HintAssist.Hint="Entrer le fournisseur" Style="{StaticResource input}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="poste" Style="{StaticResource labelInput}"/>
+                <ComboBox x:Name="postes" Style="{StaticResource combobox}">
+                    <ComboBoxItem Content="Directeur"/>
+                    <ComboBoxItem Content="Informaticien"/>
+                    <ComboBoxItem Content="Comptable"/>
+                    <ComboBoxItem Content="Secrétaire"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Date d'embauche" Style="{StaticResource labelInput}"/>
+                <DatePicker x:Name="date_embauche" Style="{StaticResource datePicker}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="40 15">
+                <TextBlock Text="Equipement" Style="{StaticResource labelInput}"/>
+                <ComboBox x:Name="equipements" Style="{StaticResource combobox}" />
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="0 30">
+            <Button x:Name="addPersonnel" Style="{StaticResource btnAdd}"
+        materialDesign:ButtonAssist.CornerRadius="20"
+        Click="addPersonnel_Click" Content="Ajouter">
+
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
